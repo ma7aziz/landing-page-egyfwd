@@ -11,13 +11,17 @@
 
 /* ---- Base Rules ---- */
 body {
-    background: rgb(136,203,171);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    background: rgb(136, 203, 171);
+    background: linear-gradient(0deg, rgba(136, 203, 171, 1) 0%, rgba(0, 13, 60, 1) 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
+
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 /* Typeography General*/
 h1 {
@@ -26,7 +30,7 @@ h1 {
     margin: 2em 1rem;
 }
 
-@media only screen and (min-width: 35em){
+@media only screen and (min-width: 35em) {
     h1 {
         font-size: 7em;
         margin: 2em 4rem 1em;
@@ -43,6 +47,11 @@ h2 {
 p {
     line-height: 1.6em;
     color: #eee;
+}
+
+a {
+    text-decoration: none;
+    color: #fff
 }
 
 /* ---- Layout Rules ---- */
@@ -64,6 +73,17 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+
+
+nav {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    background-color: #010e3d;
+    width: 100%;
+    padding: 10px 20px 10px 0
+}
+
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
@@ -104,7 +124,7 @@ section {
     color: #fff;
 }
 
-.page__footer p{
+.page__footer p {
     color: #fff;
 }
 
@@ -116,7 +136,7 @@ section {
     text-align: left;
 }
 
-@media only screen and (min-width: 35em){
+@media only screen and (min-width: 35em) {
     .landing__container {
         max-width: 50em;
         padding: 4em;
@@ -126,7 +146,7 @@ section {
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
-    text-align: right; 
+    text-align: right;
 }
 
 /* Background Circles */
@@ -146,8 +166,8 @@ section:nth-of-type(odd) .landing__container::before {
 
 section:nth-of-type(even) .landing__container::before {
     content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .2) 100%);
     position: absolute;
     top: 3em;
     right: 3em;
@@ -161,8 +181,8 @@ section:nth-of-type(even) .landing__container::before {
 
 section:nth-of-type(3n) .landing__container::after {
     content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .2) 100%);
     position: absolute;
     right: 0;
     bottom: 0;
@@ -176,8 +196,8 @@ section:nth-of-type(3n) .landing__container::after {
 
 section:nth-of-type(3n + 1) .landing__container::after {
     content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, .1) 0%, rgba(255, 255, 255, .2) 100%);
     position: absolute;
     right: 20vw;
     bottom: -5em;
@@ -210,14 +230,17 @@ section.your-active-class .landing__container::after {
 
 /* Section Active Styles Keyframe Animations */
 @keyframes rotate {
-	from {
-		transform: rotate(0deg)
-		           translate(-1em)
-		           rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg)
-		           translate(-1em) 
-		           rotate(-360deg);
-	}
+    from {
+        transform: rotate(0deg) translate(-1em) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    }
+}
+
+/* Special classes  */
+
+.active {
+    background-color: red
 }
