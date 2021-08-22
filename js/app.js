@@ -114,13 +114,6 @@ navList.addEventListener("click", (e) => {
 
 // Build menu
 document.addEventListener("load", buildNav());
-// Scroll to section on link click
-
-/// SCROLL TO TOP OR BOTTOM
-// let scrolBtn = document.getElementById("scroll");
-// onload = function () {
-//   scrolBtn.innerText = "scroll to buttom";
-// };
 
 // mobile Nav menu
 let menuBtn = document.querySelector(".mobile-menu");
