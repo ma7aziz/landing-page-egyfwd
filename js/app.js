@@ -32,14 +32,18 @@ let navList = document.getElementById("navbar__list");
 
 let deleteActiveClasses = () => {
   let li = document.querySelectorAll("nav li ");
-  li.forEach((l) => {
-    l.classList.remove("active");
-  });
+  //remove active class from nav
+  li.forEach((l) => l.classList.remove("active"));
+  // remove active class from section body
+  sections.forEach((sect) => sect.classList.remove("your-active-class"));
 };
 
 let addActiveClass = function (section) {
   let selector = `nav li a[href="#${section}"]`;
+  //add active class to nav
   document.querySelector(selector).parentElement.classList.add("active");
+  //add active class to section body
+  document.getElementById(section).classList.add("your-active-class");
 };
 /**
  * End Helper Functions
@@ -65,6 +69,7 @@ let buildNav = function () {
     newLi.style.cssText = "color : red ; padding : 10px ";
   }
 };
+
 // Add class 'active' to section when near top of viewport
 onscroll = function () {
   let scrollPosition = document.documentElement.scrollTop || window.pageYOffset;
@@ -76,11 +81,31 @@ onscroll = function () {
     ) {
       deleteActiveClasses();
       addActiveClass(section.attributes.id.value);
+      section.classList.add("you-active-class");
     }
   });
 };
-// Scroll to anchor ID using scrollTO event
 
+// Scroll to anchor ID using scrollTO event
+navList.addEventListener("click", (e) => {
+  e.preventDefault();
+  let selector = e.target.attributes.href;
+  if (selector) {
+    let section = document.querySelector(selector.value);
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+    //Set sections as active
+    sections.forEach((section) =>
+      section.classList.remove("your-active-class")
+    );
+
+    section.classList.add("your-active-class");
+    // hide nav menu if on mobile
+    navList.classList.remove("show");
+  }
+});
 /**
  * End Main Functions
  * Begin Events
@@ -91,26 +116,14 @@ onscroll = function () {
 document.addEventListener("load", buildNav());
 // Scroll to section on link click
 
-// Set sections as active
-
 /// SCROLL TO TOP OR BOTTOM
-let scrolBtn = document.getElementById("scroll");
-onload = function () {
-  scrolBtn.innerText = "scroll to buttom";
-};
+// let scrolBtn = document.getElementById("scroll");
+// onload = function () {
+//   scrolBtn.innerText = "scroll to buttom";
+// };
 
-navList.addEventListener("click", (e) => {
-  e.preventDefault();
-  let selector = e.target.attributes.href;
-  if (selector) {
-    let section = document.querySelector(selector.value);
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-    sections.forEach((section) =>
-      section.classList.remove("your-active-class")
-    );
-    section.classList.add("your-active-class");
-  }
+// mobile Nav menu
+let menuBtn = document.querySelector(".mobile-menu");
+menuBtn.addEventListener("click", () => {
+  navList.classList.toggle("show");
 });

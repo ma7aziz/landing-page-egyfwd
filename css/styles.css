@@ -254,3 +254,51 @@ section.your-active-class .landing__container::after {
     right: 0%;
     z-index: 9999
 }
+
+
+/* MObILE MENU */
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width : 700px) {
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        cursor: pointer
+    }
+
+    nav {
+        padding: 0
+    }
+
+    #navbar__list {
+        padding: 0;
+        position: fixed;
+        top: 50px;
+        left: -100%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        border: none
+    }
+
+    #navbar__list li a {
+        color: #010e3d
+    }
+
+    #navbar__list.show {
+        left: 0;
+
+    }
+
+    .active {
+        background-color: #010e3d46
+    }
+
+
+}
