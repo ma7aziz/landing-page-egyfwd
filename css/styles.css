@@ -242,5 +242,15 @@ section.your-active-class .landing__container::after {
 /* Special classes  */
 
 .active {
-    background-color: red
+
+    border-bottom: 1px solid #fff
+}
+
+#scroll {
+    padding: 5px 10px;
+    background: #444444;
+    position: fixed;
+    top: 20%;
+    right: 0%;
+    z-index: 9999
 }
