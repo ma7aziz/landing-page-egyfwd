@@ -101,9 +101,9 @@ onload = function () {
 
 navList.addEventListener("click", (e) => {
   e.preventDefault();
-  let selector = e.target.attributes.href.value;
+  let selector = e.target.attributes.href;
   if (selector) {
-    let section = document.querySelector(selector);
+    let section = document.querySelector(selector.value);
     section.scrollIntoView({
       behavior: "smooth",
       block: "center",
