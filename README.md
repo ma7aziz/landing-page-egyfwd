@@ -1,13 +1,16 @@
 # Landing Page Project
 
+this project is the first in Udacity professional webDeveloment nanodegree
+
 ## Table of Contents
 
-* [Instructions](#instructions)
+- [Project Details ](#Details)
 
-## Instructions
+## Details
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Editing landing page and creating dynamic content using javascript
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+    -Building Dynamic Nav Menu Corrosponding To every Section in The page.
+    -Monitoring wich section is on the viewport and add custome (active) class to the section and it's nav link
+    -Smooth scroll into section when clicking it's nav link
+    -Added mobile responsive nav menu
